@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './styles/scrolling.css';
+
+@layer base {
+  /* Interactive element transitions */
+  .interactive-hover {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  /* Focus states */
+  .focus-visible:focus {
+    @apply outline-none ring-2 ring-offset-2 ring-indigo-500;
+  }
+
+  /* Clickable area improvements */
+  .clickable {
+    @apply cursor-pointer hover:bg-gray-50 active:bg-gray-100;
+  }
+
+  /* Rich text editor styles */
+  .rich-text-content {
+    @apply prose prose-sm max-w-none;
+  }
+  
+  /* Toast animations */
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+  
+  /* Card hover effect */
+  .scale-102 {
+    transform: scale(1.02);
+  }
+  
+  /* Modal z-index stacking */
+  .modal-overlay {
+    z-index: 40;
+  }
+  
+  .modal-content {
+    z-index: 50;
+  }
+  
+  /* Rich text content styles */
+  .prose img {
+    @apply rounded-lg shadow-md my-6;
+  }
+  
+  .prose h1, .prose h2, .prose h3 {
+    @apply font-bold mt-8 mb-4;
+  }
+  
+  .prose p {
+    @apply mb-4 text-gray-700 leading-relaxed;
+  }
+  
+  .prose ul, .prose ol {
+    @apply my-4 pl-6;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+}
